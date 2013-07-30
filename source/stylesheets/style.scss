@@ -1,0 +1,250 @@
+/*
+ * Copyright (C) 2013 Dmytro Nechepurenko, Uplab.ru
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above
+ * copyright notice, this list of conditions and the following disclaimer
+ * in the documentation and/or other materials provided with the
+ * distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY UPLAB.RU AND ITS CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL UPLAB.RU.
+ * OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* @group Generic
+  --------------------------------------------------------------------------- */
+
+body {
+	margin: 0;
+	background-color: #fff;
+}
+
+img {
+	display: block;
+	line-height: 1px;
+	border: none;
+}
+
+.ln {
+	color: #39c;
+}
+
+/* @end */
+
+/* @group Table
+  --------------------------------------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: none;
+	margin-bottom: 0;
+	font-family: Verdana, sans-serif;
+	-premailer-cellspacing: 0;
+	-premailer-cellpadding: 0;
+}
+
+td {
+	border: none;
+	padding: 0;
+	vertical-align: top;
+}
+
+// align
+
+.td_middle {
+	vertical-align: middle;
+}
+
+.td_bottom {
+	vertical-align: bottom;
+}
+
+.td_center {
+	text-align: center;
+}
+
+// color
+
+.td_black {
+	background-color: #2d3135;
+}
+
+.td_gray {
+	background-color: #f4f4f4;
+}
+
+.td_yellow {
+	background-color: #f1edcf;
+}
+
+.td_white {
+	background-color: #fff;
+}
+
+.td_red {
+	background-color: #e87464;
+}
+
+// modifications
+
+.td_text-title {
+	//padding-bottom: 5px;
+}
+
+/* @end */
+
+/* @group Text
+  --------------------------------------------------------------------------- */
+
+.text {
+	font-family: Verdana, sans-serif;
+	color: #666;
+	line-height: 18px;
+}
+
+span.text {
+	display: block;
+}
+
+// size
+
+.text_primary {
+	font-size: 12px;
+}
+
+.text_secondary {
+	font-size: 11px;
+}
+
+.text_12 {
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.text_18 {
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.text_collapsed {
+	letter-spacing: -1px;
+}
+
+// color
+
+.text_light-gray {
+	color: #999;
+}
+
+.text_black {
+	color: #2d3135;
+}
+
+.text_white {
+	color: #fff;
+}
+
+// deco
+
+.text_tt {
+	text-transform: uppercase;
+}
+
+.text_right {
+	text-align: right;
+}
+
+// elements
+
+/* @end */
+
+/* @group title
+  --------------------------------------------------------------------------- */
+
+.title {
+	font-family: Verdana, sans-serif;
+	font-size: 30px;
+	line-height: 24px;
+	color: #e87464;
+	text-transform: uppercase;
+}
+
+.title_alt {
+	line-height: 50px;
+}
+
+/* @end */
+
+/* @group Date
+  --------------------------------------------------------------------------- */
+
+.date {
+	color: #fff;
+	font-family: Verdana, sans-serif;
+}
+
+.date_day {
+	font-size: 46px;
+	line-height: 48px;
+}
+
+.date_month {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+/* @end */
+
+/* @group Btn
+  --------------------------------------------------------------------------- */
+
+.btn {
+	font-family: Verdana, sans-serif;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+// size
+
+.btn_primary {
+	font-size: 11px;
+	width: 240px;
+	height: 50px;
+	line-height: 50px;
+}
+
+// color
+
+.btn_red {
+	color: #fff;
+	background-color: #e87464;
+}
+
+/* @end */
+
+/* @group List
+  --------------------------------------------------------------------------- */
+
+.list-item {
+	padding-top: 8px;
+}
+
+/* @end */
