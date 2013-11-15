@@ -132,6 +132,13 @@ set :css_dir, 'Css'
 set :images_dir, 'images'
 
 
+compass_config do |config|
+  config.output_style = :expanded
+  config.sass_options = {
+    :debug_info => false,
+    :line_comments => false
+  }
+end
 
 # Build-specific configuration
 configure :build do
