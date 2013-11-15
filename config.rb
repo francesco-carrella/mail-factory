@@ -28,12 +28,12 @@
 #   page "/admin/*"
 # end
 
-page "/index.html", :layout => false
-
 # Proxy (fake) files
 # page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
+
+
 
 ###
 # Helpers
@@ -53,32 +53,66 @@ page "/index.html", :layout => false
 # Premailer
 ###
 
-require 'premailer'
-require 'hpricot'
+# require 'premailer'
+# require 'hpricot'
 
-module PreMailer
+# module PreMailer
+#   class << self
+#     def registered(app)
+#       require "premailer"
+#       app.after_build do |builder|
+#         prefix = build_dir + File::SEPARATOR
+#         Dir.chdir(build_dir) do
+#           Dir.glob('**/*.html') do |file|
+#             premailer = Premailer.new(file,
+#               :warn_level => Premailer::Warnings::SAFE,
+#               :preserve_styles => false,
+#               :css_to_attributes => true,
+#               :remove_comments => false,
+#               :remove_ids => false,
+#               :remove_classes => false
+#             )
+#             fileout = File.open(file, "w")
+#             # fileout.puts premailer.to_inline_css
+#             fileout.close
+#             premailer.warnings.each do |w|
+#               builder.say_status :premailer, "#{w[:message]} (#{w[:level]}) may not render properly in #{w[:clients]}"
+#             end
+#             builder.say_status :premailer, prefix+file
+#           end
+#         end
+#       end
+#     end
+#     alias :included :registered
+#   end
+# end
+
+# ::Middleman::Extensions.register(:inline_premailer, PreMailer)
+
+# activate :inline_premailer
+
+###
+# Import Styles
+###
+module ImportStyles
   class << self
     def registered(app)
-      require "premailer"
       app.after_build do |builder|
         prefix = build_dir + File::SEPARATOR
         Dir.chdir(build_dir) do
-          Dir.glob('**/*.html') do |file|
-            premailer = Premailer.new(file,
-	            :warn_level => Premailer::Warnings::SAFE,
-	            :preserve_styles => false,
-	            :css_to_attributes => true,
-	            :remove_comments => true,
-	            :remove_ids => true,
-	            :remove_classes => true
-            )
-            fileout = File.open(file, "w")
-            fileout.puts premailer.to_inline_css
-            fileout.close
-            premailer.warnings.each do |w|
-              builder.say_status :premailer, "#{w[:message]} (#{w[:level]}) may not render properly in #{w[:clients]}"
+          Dir.glob('**/*.html') do |file_path|
+            file_content = File.read(file_path)
+            styles_matches = /<link.*?href=["'](.*?)["'].*?>/.match(file_content)
+            if styles_matches
+              styles_matches.captures.each_index do |i|
+                styles_content = File.read(styles_matches.captures[i])
+                file_content.gsub!(styles_matches[i], "<style>\n#{styles_content}\n</style>")
+              end
+            end  
+            File.open(file_path, "w") {|file| file.puts file_content}
+            if styles_matches
+              builder.say_status :import_styles, prefix+file_path
             end
-            builder.say_status :premailer, prefix+file
           end
         end
       end
@@ -86,20 +120,18 @@ module PreMailer
     alias :included :registered
   end
 end
+::Middleman::Extensions.register(:import_styles, ImportStyles)
+activate :import_styles
 
-::Middleman::Extensions.register(:inline_premailer, PreMailer)
 
-activate :inline_premailer
 
 ###
 # Paths
 ##
-
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
+set :css_dir, 'Css'
 set :images_dir, 'images'
+
+
 
 # Build-specific configuration
 configure :build do
