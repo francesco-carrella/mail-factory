@@ -1,0 +1,57 @@
+.header-decoration {
+    width: 100%;
+    td {
+        border-top: solid 8px $brand_color;
+    }
+}
+.header {
+    tr {
+        td {
+            padding: 25px 0;
+            vertical-align: middle;
+            font-size: 13px;
+        }
+    }
+    .logo img {
+        width: 130px;
+        height: 40px;
+    }
+}
+.navigation {
+    width: $full_width;
+    margin: 0 auto;
+    td {
+        border-top: solid 1px #CCC;
+        padding: 4px;
+        padding-bottom: 30px;
+        text-align: center;
+        a {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            &.brand {
+                color: $brand_color;
+            }
+        }
+    }
+}
+
+@if $responsive {
+    @media only screen and (max-width: $mobile_width*2) {
+        *[class].header {
+            *[class].logo {
+                width: 100% !important;
+                img {
+                    display: inline;
+                }
+            }
+        }
+        *[class].navigation {
+            display: none;
+        }
+        *[class].header td {
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+}

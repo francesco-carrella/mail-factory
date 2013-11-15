@@ -1,4 +1,11 @@
+$brand_color: #E90582;
+
 @import "_reset";
 @import "_grid";
 @import "_elements";
 @import "_typo";
+@import "_header";
+@import "_footer";
+body {
+    background: #F3F3F3;
+}
