@@ -39,19 +39,19 @@
 @if $responsive {
     @media only screen and (max-width: $mobile_width*2) {
         *[class].header {
-            *[class].logo {
+            td {
+                text-align: center;
+                padding: 10px 0 !important;
+            }
+            td[class].logo {
                 width: 100% !important;
                 img {
-                    display: inline;
+                    display: inline !important;
                 }
             }
         }
         *[class].navigation {
-            display: none;
-        }
-        *[class].header td {
-            text-align: center;
-            padding: 10px 0;
+            display: none !important;
         }
     }
 }

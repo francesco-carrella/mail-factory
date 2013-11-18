@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!-- InstanceBegin template="/Templates/default.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- InstanceBegin template="/Templates/default.dwt" codeOutsideHTMLIsLocked="true" -->
 <head>
     <title>
         <!-- InstanceBeginEditable name="doctitle" -->
@@ -508,20 +508,19 @@ body {
 }
 
 @media only screen and (max-width: 640px) {
-  *[class].header *[class].logo {
+  *[class].header td {
+    text-align: center;
+    padding: 10px 0 !important;
+  }
+  *[class].header td[class].logo {
     width: 100% !important;
   }
-  *[class].header *[class].logo img {
-    display: inline;
+  *[class].header td[class].logo img {
+    display: inline !important;
   }
 
   *[class].navigation {
-    display: none;
-  }
-
-  *[class].header td {
-    text-align: center;
-    padding: 10px 0;
+    display: none !important;
   }
 }
 .footer1, .footer2, .footer3 {
@@ -610,7 +609,7 @@ body {
         <td class="grid-2 logo">
             <img src="http://www.shana.com/public/img/banners/newsletter/template/logo.png" alt="Shana" />
         </td>
-        <td class="grid-6 right">
+        <td class="grid-6 center">
             <span class="brand">ENVIO GRATUTITO</span> A PARTIR DE 40€
         </td>
     </tr>

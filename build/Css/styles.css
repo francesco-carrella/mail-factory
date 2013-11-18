@@ -497,20 +497,19 @@ body {
 }
 
 @media only screen and (max-width: 640px) {
-  *[class].header *[class].logo {
+  *[class].header td {
+    text-align: center;
+    padding: 10px 0 !important;
+  }
+  *[class].header td[class].logo {
     width: 100% !important;
   }
-  *[class].header *[class].logo img {
-    display: inline;
+  *[class].header td[class].logo img {
+    display: inline !important;
   }
 
   *[class].navigation {
-    display: none;
-  }
-
-  *[class].header td {
-    text-align: center;
-    padding: 10px 0;
+    display: none !important;
   }
 }
 .footer1, .footer2, .footer3 {
