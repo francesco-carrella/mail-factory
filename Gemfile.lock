@@ -55,6 +55,7 @@ GEM
       middleman-core (>= 3.0.2)
       multi_json (~> 1.0)
       rack-livereload
+    middleman-more (3.1.6)
     middleman-sprockets (3.2.0)
       middleman-core (~> 3.2)
       sprockets (~> 2.1)
@@ -93,4 +94,9 @@ PLATFORMS
 
 DEPENDENCIES
   middleman
+  middleman-core
   middleman-livereload
+  middleman-more
+  middleman-sprockets
+  rack
+  rack-livereload
