@@ -73,10 +73,10 @@
                 <table class="container links">
                     <tr>
                         <td class="grid-8">
-                            <a href="#">Darse de baja</a>   |   
-                            <a href="#">Envíos y devoluciones</a>   |   
-                            <a href="#">Política de Privacidad</a>   |   
-                            <a href="#">Contacta con Nosotros</a>
+                            <a href="$unsubUrl$" target="_blank">Darse de baja</a>   |   
+                            <a href="http://www.shana.com/es/info/#shipments" target="_blank">Envíos y devoluciones</a>   |   
+                            <a href="http://www.shana.com/es/info/#privacy" target="_blank">Política de Privacidad</a>   |   
+                            <a href="http://www.shana.com/es/info" target="_blank">Contacta con Nosotros</a>
                         </td>
                     </tr>
                 </table>
